@@ -1,13 +1,11 @@
 const baseUrl = "https://dummyjson.com/products";
 
-const getAllTops = () => {
-    fetch(`${baseUrl}/category/tops`)
-        .then(res => res.json())
-        .then(console.log);      
-}
+export const getAllTops = () => {
+  return fetch(`${baseUrl}/category/tops?limit=30`).then((res) => res.json());
+};
 
-const getTopById = (id) => {
-    fetch(`${baseUrl}/${id}`)
-        .then(res => res.json())
-        .then(console.log);
-}
+export const getTopById = (id) => {
+  fetch(`${baseUrl}/${id}`)
+    .then((res) => res.json())
+    .then(console.log);
+};

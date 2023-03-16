@@ -1,11 +1,19 @@
-import React from 'react'
+import React from "react";
+import Card from "./shared/Card";
+import "./ProductList.css";
 
-function ProductList() {
+function ProductList(props) {
   return (
-    <div>
-      ProductList
+    <div className="category-container">
+      <div>
+        {props.Tops.map((top) => (
+          <Card key={top.id}>
+            <h2>{top.title}</h2>
+          </Card>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default ProductList
+export default ProductList;
